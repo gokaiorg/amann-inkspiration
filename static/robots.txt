@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://nakacondo.com/sitemap.xml
