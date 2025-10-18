@@ -1,58 +1,38 @@
-<p align="center">
-  <h1>Amann</h1>
-</p>
+# sv
 
-<p align="center">
-  Inkspiration
-</p>
+Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
 
-```bash
-# Installation with `git clone`
+## Creating a project
 
-npm install
+If you're seeing this, you've probably already done this step. Congrats!
 
-# To develop
-npm develop
+```sh
+# create a new project in the current directory
+npx sv create
 
-# To build
-npm build
-
-# To test SSR (for Lighthouse etc.)
-npm ssr
-
-# To format JS (precommit)
-npm format
-
-# To generate favicons (included in `build`)
-npm build:favicons
+# create a new project in my-app
+npx sv create my-app
 ```
 
-## Folder structure
-```bash
-├── gatsby-browser.js # Specify how Gatsby renders pages in the browser
-├── gatsby-config.js # Gatsby config, mostly taken from `site-config.js`
-├── gatsby-node.js # Modify webpack config
-├── gatsby-ssr.js # Specify how Gatsby builds pages
-├── site-config.js # Global settings for the whole site, used by multiple scripts
-├── content # Content & data, in both json and markdown
-├── src
-│   ├── components
-│   │   ├── head # All meta tags etc.
-│   │   ├── io # Intersection Observer component, uses render props
-│   │   ├── layout # Layout component
-│   │   │   ├── layout.css.js # .css.js for component's `styled-components`
-│   │   │   └── layout.js
-│   │   └── transition # Page Transition component, used by Gatsby APIs
-│   ├── constants # Site-wide constants (breakpoints, colors, etc.)
-│   ├── containers # Container components if store is needed
-│   ├── helpers
-│   │   ├── schemaGenerator.js # Generates JSON-LD schema.org snippets
-│   │   └── mediaTemplates.js # Creates media queries for styled-components
-│   ├── images # Images needed by the site/theme (not content)
-│   ├── pages
-│   ├── store # Store and provider of a React.createContext instance
-│   └── global.css.js # Global CSS
-└── scripts
-    ├── lighthouse.test.js # Tests the site specified inside `site-config.js` with Google Lighthouse (WIP)
-    └── favicons.js # Generates favicons and manifest using one png only.
+## Developing
+
+Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+
+```sh
+npm run dev
+
+# or start the server and open the app in a new browser tab
+npm run dev -- --open
 ```
+
+## Building
+
+To create a production version of your app:
+
+```sh
+npm run build
+```
+
+You can preview the production build with `npm run preview`.
+
+> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
