@@ -10,6 +10,8 @@
 	
 	<link rel="icon" type="image/x-icon" href="/logo-amann-inkspiration.ico" />
 	<link rel="apple-touch-icon" href="/logo-amann-inkspiration.jpeg" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 	<title>Amann Inkspiration - Street Art, Painting & Tattoo Gallery in Phuket</title>
 	<meta name="description" content="Explore breathtaking street art, paintings, and tattoos at Amann Inkspiration, Phuket's leading art gallery showcasing local and international artists.">
@@ -32,7 +34,7 @@
 <header>
 	<nav>
 		<div class="brand">
-			<a href="/"><img src="/logo-amann-inkspiration.jpeg" alt="Amann Inkspiration Logo" /> Amann Inkspiration</a>
+			<a href="/"><img src="/logo-amann-inkspiration.jpeg" alt="Amann Inkspiration Logo" width="225" height="225" /> Amann Inkspiration</a>
 		</div>
 		<div class="social-links">
 			<a href="http://art-fate.com/" target="_blank" rel="noopener">Art Fate</a>
