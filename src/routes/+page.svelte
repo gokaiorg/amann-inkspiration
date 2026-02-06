@@ -2,38 +2,38 @@
 	let activeCategory = 'All';
 
 	const streetArt = [
-		{ url: '/assets/street-art-01.jpg', title: 'Kami, Collaboration AMANN X PEZ X KAMI' },
-		{ url: '/assets/street-art-02.jpg', title: 'UNITY, The Color of Kolok - December 2018' },
-		{ url: '/assets/street-art-03.jpg', title: 'Control, mural 2019' },
-		{ url: '/assets/street-art-04.jpg', title: 'Customize your life, Collabotation AMANN X SWEL2' },
-		{ url: '/assets/street-art-05.jpg', title: 'Mecano, at bike Phuket' }
+		{ url: '/assets/street-art-01.jpg', title: 'Kami, Collaboration AMANN X PEZ X KAMI', width: 960, height: 719 },
+		{ url: '/assets/street-art-02.jpg', title: 'UNITY, The Color of Kolok - December 2018', width: 1080, height: 810 },
+		{ url: '/assets/street-art-03.jpg', title: 'Control, mural 2019', width: 960, height: 960 },
+		{ url: '/assets/street-art-04.jpg', title: 'Customize your life, Collabotation AMANN X SWEL2', width: 1440, height: 1081 },
+		{ url: '/assets/street-art-05.jpg', title: 'Mecano, at bike Phuket', width: 960, height: 960 }
 	];
 
 	const paintings = [
-		{ url: '/assets/painting-01.jpg', title: 'Lost in the Universe, Acrylic on paper' },
-		{ url: '/assets/painting-02.jpg', title: 'Last match, 50X60cm /Acrylic and spray paint on canvas/ 2021' }
+		{ url: '/assets/painting-01.jpg', title: 'Lost in the Universe, Acrylic on paper', width: 672, height: 903 },
+		{ url: '/assets/painting-02.jpg', title: 'Last match, 50X60cm /Acrylic and spray paint on canvas/ 2021', width: 1440, height: 1440 }
 	];
 
 	const expositions = [
-		{ url: '/assets/expo-01.jpg', title: 'MUTE exhibition, Exhibition at Design Fiesta Gallery. Tokyo' }
+		{ url: '/assets/expo-01.jpg', title: 'MUTE exhibition, Exhibition at Design Fiesta Gallery. Tokyo', width: 960, height: 960 }
 	];
 
 	const toys = [
-		{ url: '/assets/toy-01.jpg', title: 'Hope, Tian Tian Xiang shang X AMANN' },
-		{ url: '/assets/toy-02.jpg', title: 'MUTE, resine structure 10cm' },
-		{ url: '/assets/toy-03.jpg', title: 'Mute Art Toy 2, Black & white or colors' }
+		{ url: '/assets/toy-01.jpg', title: 'Hope, Tian Tian Xiang shang X AMANN', width: 1980, height: 1320 },
+		{ url: '/assets/toy-02.jpg', title: 'MUTE, resine structure 10cm', width: 4608, height: 3456 },
+		{ url: '/assets/toy-03.jpg', title: 'Mute Art Toy 2, Black & white or colors', width: 1728, height: 840 }
 	];
 
 	const collages = [
-		{ url: '/assets/collage-01.jpg', title: 'Hope, Tian Tian Xiang shang X AMANN' }
+		{ url: '/assets/collage-01.jpg', title: 'Hope, Tian Tian Xiang shang X AMANN', width: 768, height: 960 }
 	];
 
 	const tattoos = [
-		{ url: '/assets/tattoo-01.jpg', title: 'Rebirth 4, geometry tattoo' },
-		{ url: '/assets/tattoo-02.jpg', title: 'Flower Power, Mandala' },
-		{ url: '/assets/tattoo-03.jpg', title: 'Swallow, geomtric tattoo' },
-		{ url: '/assets/tattoo-04.jpg', title: 'Lola, Geometric french bulldog' },
-		{ url: '/assets/tattoo-05.jpg', title: 'Geo cat, geometrical tattoo' }
+		{ url: '/assets/tattoo-01.jpg', title: 'Rebirth 4, geometry tattoo', width: 960, height: 959 },
+		{ url: '/assets/tattoo-02.jpg', title: 'Flower Power, Mandala', width: 960, height: 960 },
+		{ url: '/assets/tattoo-03.jpg', title: 'Swallow, geomtric tattoo', width: 960, height: 960 },
+		{ url: '/assets/tattoo-04.jpg', title: 'Lola, Geometric french bulldog', width: 960, height: 960 },
+		{ url: '/assets/tattoo-05.jpg', title: 'Geo cat, geometrical tattoo', width: 960, height: 960 }
 	];
 
 	const allPhotos = [
@@ -70,10 +70,18 @@
 
 <section>
 	<div class="photo-grid">
-		{#each filteredPhotos as photo}
+		{#each filteredPhotos as photo, i}
 			<div class="photo-item">
 				<p class="title">{photo.title}</p>
-				<img src={photo.url} alt={photo.title} />
+				<img
+					src={photo.url}
+					alt={photo.title}
+					width={photo.width}
+					height={photo.height}
+					loading={i < 4 ? 'eager' : 'lazy'}
+					fetchpriority={i < 4 ? 'high' : 'auto'}
+					decoding="async"
+				/>
 			</div>
 		{/each}
 	</div>
